@@ -1,0 +1,14 @@
+[Unit]
+Description=Apple TV Control Service
+After=network.target
+
+[Service]
+User=manoj
+Group=manoj
+WorkingDirectory=/home/manoj/atv-control
+ExecStart=/home/manoj/atv-control/.venv/bin/python3 /home/manoj/atv-control/src/app.py
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
